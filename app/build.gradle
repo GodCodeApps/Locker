@@ -9,10 +9,13 @@ android {
     buildToolsVersion "29.0.0"
     defaultConfig {
         applicationId "com.lihao.locker"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        sourceSets.main {
+            jniLibs.srcDirs = ['libs']
+        }
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

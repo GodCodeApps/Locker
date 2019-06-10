@@ -66,6 +66,10 @@ public class FaceDB {
         }
     }
 
+    /**
+     * 保存人脸
+     * @return
+     */
     private boolean saveInfo() {
         try {
             FileOutputStream fs = new FileOutputStream(mDBPath + "/face.txt");
@@ -145,6 +149,13 @@ public class FaceDB {
         return false;
     }
 
+    /**
+     * 采集完图片保存人唯一标识，人脸特征，图片
+     *
+     * @param name
+     * @param face
+     * @param faceicon
+     */
     public void addFace(String name, AFR_FSDKFace face, Bitmap faceicon) {
         try {
             // save face
@@ -196,6 +207,11 @@ public class FaceDB {
         }
     }
 
+    /**
+     * 根据标识删除人脸特征
+     * @param name
+     * @return
+     */
     public boolean delete(String name) {
         try {
             //check if already registered.
