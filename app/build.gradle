@@ -42,4 +42,5 @@ dependencies {
     implementation files('libs/ageestimation.jar')
     implementation files('libs/genderestimation.jar')
     implementation 'com.guo.android_extend:android-extend:1.0.6'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.1"
 }

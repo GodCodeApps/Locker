@@ -19,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.lihao.locker.App.Companion.getCaptureImage
 import com.lihao.locker.utils.TimeUtils
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.*
+import java.lang.Runnable
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -44,7 +46,18 @@ class MainActivity : AppCompatActivity() {
                 return
             }
         }
-        tvBottomTip.text = TimeUtils.getNowDatetime() + "    ${TimeUtils.getWeekOfDate(Date())}"
+        GlobalScope.launch(Dispatchers.IO) {
+            while (true) {
+                delay(1000)
+                withContext(Dispatchers.Main) {
+                    tvBottomTip.text = TimeUtils.getNowDatetime() + "    ${TimeUtils.getWeekOfDate(Date())}"
+                }
+            }
+        }
+
+
+
+
         tvSave.setOnClickListener {
             val intent = Intent("android.media.action.IMAGE_CAPTURE")
             val values = ContentValues(1)
