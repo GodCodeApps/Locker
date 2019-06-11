@@ -26,6 +26,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".DetecterActivity"></activity>
+        <activity android:name=".FaceSaveActivity"></activity>
+        <activity android:name=".RegisterActivity"></activity>
     </application>
 
 </manifest>

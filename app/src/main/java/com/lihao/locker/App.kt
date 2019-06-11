@@ -12,15 +12,22 @@ import android.util.Log
 class App : Application() {
     private val TAG = this.javaClass.toString()
     lateinit var mFaceDB: FaceDB
-    var captureImage: Uri? = null
 
     override fun onCreate() {
         super.onCreate()
         mFaceDB = FaceDB(this.externalCacheDir!!.path)
-        captureImage = null
+        mImage = null
     }
 
     companion object {
+        var mImage: Uri? = null
+        fun setCaptureImage(uri: Uri) {
+            mImage = uri
+        }
+
+        fun getCaptureImage(): Uri? {
+            return mImage
+        }
 
         /**
          * @param path

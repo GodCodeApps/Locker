@@ -16,12 +16,38 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
-
     <TextView
-            android:id="@+id/tvOpenLocker"
-            android:text="人脸开箱"
-            android:drawableTop="@mipmap/ic_launcher"
+            android:id="@+id/tvSave"
+            android:text="存物品"
             app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:layout_constraintBottom_toTopOf="@+id/tvOpen"
+            android:textSize="@dimen/dimens_18"
+            android:background="@drawable/shape_save_bg"
+            android:gravity="center"
+            android:drawablePadding="@dimen/dimens_18"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <TextView
+            android:id="@+id/tvOpen"
+            android:text="取物品"
+            android:background="@drawable/shape_save_bg"
+            app:layout_constraintTop_toBottomOf="@+id/tvSave"
+            app:layout_constraintBottom_toTopOf="@+id/tvSysManaget"
+            android:textSize="@dimen/dimens_18"
+            android:gravity="center"
+            android:drawablePadding="@dimen/dimens_18"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <TextView
+            android:id="@+id/tvSysManaget"
+            android:text="管理员"
+            android:background="@drawable/shape_save_bg"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/tvOpen"
             app:layout_constraintBottom_toTopOf="@+id/tvBottomTip"
             android:textSize="@dimen/dimens_18"
             android:drawablePadding="@dimen/dimens_18"
